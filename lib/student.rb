@@ -41,11 +41,11 @@ class Student
     self.db_get("SELECT * FROM students WHERE grade = #{grade}")
   end
 
-  def self.drop_table() DB[:conn].execute("DROP TABLE IF EXISTS students") end
+  def self.drop_table() DB[:conn].execute('DROP TABLE IF EXISTS students') end
 
   def save
     DB[:conn].execute(
-      "INSERT INTO students(name,grade) VALUES(?,?)", self.name, self.grade
+      'INSERT INTO students(name,grade) VALUES(?,?)', self.name, self.grade
     )
   end
 
