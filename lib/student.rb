@@ -9,8 +9,8 @@ class Student
     new_student
   end
 
-  def self.db_get(filter)
-    DB[:conn].execute(filter).map{ |row| self.new_from_db(row) }
+  def self.db_get(query)
+    DB[:conn].execute(query).map{ |row| self.new_from_db(row) }
   end
 
   def self.find_by_name(name)
